@@ -177,7 +177,10 @@ def limit_resources() -> None:
             kernel32.SetProcessWorkingSetSize(-1, ctypes.c_size_t(memory), ctypes.c_size_t(memory))
         else:
             import resource
-            resource.setrlimit(resource.RLIMIT_DATA, (memory, memory))
+            try:
+                resource.setrlimit(resource.RLIMIT_DATA, (memory, memory))
+            except ValueError:
+                pass
 
 
 def release_resources() -> None:
