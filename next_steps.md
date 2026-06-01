@@ -25,6 +25,13 @@ pip install -r requirements.txt
 
 ## Step 3 — Download models (~600MB total)
 
+**Option A: Download from GitHub Release** (recommended)
+```bash
+# Download both models at once
+gh release download v1.0-models -R astroprize/Deep-Live-Check -D models/
+```
+
+**Option B: Manual download**
 Place both files in the `models/` folder:
 
 1. **inswapper_128_fp16.onnx** (face swap model)
